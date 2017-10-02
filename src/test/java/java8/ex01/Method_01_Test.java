@@ -18,6 +18,11 @@ public class Method_01_Test {
         List<Person> findAll();
 
         // TODO créer une méthode int sumAge()
+        public static Integer sumAge(int x, int y){
+			
+        	
+        	return sumAge(x,y);     	
+        }
         // TODO Cette méthode retourne le résultat de l'addition des ages des personnes
     }
     // end::IDao[]
