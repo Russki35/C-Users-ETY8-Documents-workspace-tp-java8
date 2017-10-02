@@ -66,15 +66,21 @@ public class Lambda_01_Test {
 
 		// TODO result ne doit contenir que des personnes dont le prénom est
 		// "first_10"
-		List<Person> result = filter(personList, new PersonPredicate(){
-
-			@Override
-			public boolean test(Person p) {
+		
+		//1ere solution
+		List<Person> result = filter(personList,(Person p) -> {
 				
 				return p.getFirstname() == "first_10";
-			}
+			});
+		
+		//2e solution
+		result = filter(personList,p -> {
 			
+			return p.getFirstname() == "first_10";
 		});
+		
+		//3e solution -> expression Lambda
+		result = filter(personList,p ->  p.getFirstname().equals("first_10"));
 
 		assert result.size() == 1;
 		assert result.get(0).getFirstname().equals("first_10");
