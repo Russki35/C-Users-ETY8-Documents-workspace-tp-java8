@@ -5,6 +5,7 @@ import java8.data.Data;
 import java8.data.Person;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,9 +21,24 @@ public class Lambda_02_Test {
     // end::PersonToAccountMapper[]
 
     // tag::map[]
-    private List<Account> map(List<Person> personList, PersonToAccountMapper mapper) {
+    private List <Account> map(List<Person> personList, PersonToAccountMapper mapper) {
         // TODO implémenter la méthode pour transformer une liste de personnes en liste de comptes
-        return null;
+    	
+    	// etape 1 => créer une liste de comptes vide
+    	List<Account> comptes = new ArrayList<>();
+    	// etape 2 => itérer sur la liste de personnes
+    		for (Person p : personList){
+    			comptes.add(mapper.map(p));
+    		}
+    		// pour chaque personne
+    		
+    		// transformer l'objet personne en Account via mapper.map(objPersonne)
+    		// ajouter l'objet Account à la liste des comptes
+    	
+    	// etape 3 => retourner la liste de comptes
+    	
+    	 
+        return comptes;
     }
     // end::map[]
 
