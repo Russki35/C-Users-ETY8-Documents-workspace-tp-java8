@@ -18,7 +18,7 @@ public class Lambda_04_Test {
 
     // tag::interfaces[]
     interface GenericPredicate<T> {
-        boolean test(Person p);
+        boolean test(T p);
     }
 
     interface GenericMapper<T, E> {
@@ -51,7 +51,9 @@ public class Lambda_04_Test {
             FuncCollection<T> result = new FuncCollection<>();
             
             for (T p : list) {
-            	result.add(p);
+            	if(predicate.test(p)){
+            		result.add(p);
+            	}
 			}
             
            
@@ -110,10 +112,13 @@ public class Lambda_04_Test {
                 // TODO vérifier que chaque compte a un solde à 1000.
                 // TODO vérifier que chaque titulaire de compte a un age > 50
         
-        		.forEach(null);
+        		.forEach(compte -> {
+        			assert compte.getBalance() == 1000;
+        			assert compte.getOwner().getAge() > 50;
+        		});
 
         // TODO à supprimer
-        assert false;
+        
     }
     // end::test_filter_map_forEach[]
 
