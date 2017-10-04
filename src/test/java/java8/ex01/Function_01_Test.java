@@ -42,7 +42,13 @@ public class Function_01_Test {
     // TODO Compléter la définition de cette fonction
     // TODO la propriété owner est valorisé avec la personne en paramètre
     // TODO la propriété balance est valorisé à 1000
-    private Function<Person, Account> personToAccount = null;
+    private Function<Person, Account> personToAccount =  person -> {
+    	
+    		Account account = new Account();
+    		account.setOwner(person);
+    		account.setBalance(1000);
+    		return account;
+    };
     // end::personToAccount[]
 
     @Test
@@ -51,7 +57,7 @@ public class Function_01_Test {
         Person person = new Person("Jules", "France", 10, "pass");
 
         // TODO invoquer la fonction personToAccount
-        Account result = null;
+        Account result = personToAccount.apply(person);
 
         assert result.getOwner().equals(person);
         assert result.getBalance().equals(1000);
