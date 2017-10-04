@@ -25,7 +25,7 @@ public class Lambda_01_Test {
 
 		for (Person p : persons) {
 
-			if (predicate.test(p)) {
+			if (predicate.test(p)) { 
 				result.add(p);
 			}
 
