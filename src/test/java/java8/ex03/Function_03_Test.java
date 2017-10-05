@@ -35,7 +35,7 @@ public class Function_03_Test {
         Person mother = new Person("Aline", "Lebreton", 22, "alino");
 
         // TODO compléter le test pour qu'il soit passant
-        Person child = new Person("John Aline", "France", 0, null);
+        Person child = makeAChild.apply(father, mother);
         
 
         assert child.getFirstname().equals("John Aline");
