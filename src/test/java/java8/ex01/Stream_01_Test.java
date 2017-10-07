@@ -39,10 +39,12 @@ public class Stream_01_Test {
         List<Pizza> pizzas = new Data().getPizzas();
 
         // TODO valider si au moins une pizza à un prix >= 1300
-        Boolean result1 = null;
+        Boolean result1 = pizzas.stream()
+        				.anyMatch(pizza -> pizza.getPrice() >= 1300);
 
         // TODO valider si au moins une pizza à un prix >= 2000
-        Boolean result2 = null;
+        Boolean result2 = pizzas.stream()
+				.anyMatch(pizza -> pizza.getPrice() >= 2000);
 
         assertThat(result1, is(true));
         assertThat(result2, is(false));
@@ -54,11 +56,13 @@ public class Stream_01_Test {
         List<Pizza> pizzas = new Data().getPizzas();
 
         // TODO valider que toutes les pizzas ont un prix >= 1300
-        Boolean result1 = null;
+        Boolean result1 = pizzas.stream()
+        				  .allMatch(pizza -> pizza.getPrice() >= 1300);
 
         // TODO valider que toutes les pizzas ont un prix >= 900
-        Boolean result2 = null;
-
+        Boolean result2 = pizzas.stream()
+        				  .allMatch(pizza -> pizza.getPrice() >= 900);
+        
         assertThat(result1, is(false));
         assertThat(result2, is(true));
     }
@@ -70,7 +74,8 @@ public class Stream_01_Test {
         List<Pizza> pizzas = new Data().getPizzas();
 
         // TODO valider qu'aucune pizza n'a un prix >= 2000
-        Boolean result1 = null;
+        Boolean result1 = pizzas.stream()
+				  		  .noneMatch(pizza -> pizza.getPrice() >= 2000);;
 
         assertThat(result1, is(true));
     }
