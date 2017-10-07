@@ -11,6 +11,8 @@ import java.util.function.Predicate;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+
+
 /**
  * Exercice 01 - Optional
  */
@@ -42,7 +44,8 @@ public class Optional_01_Test {
 
         // TODO invoquer la méthode find(List<T> list, Predicate<T> predicate)
         // TODO age == 10
-        Optional<Person> result = null;
+        Predicate<Person> predicateAge = person -> person.getAge() == 10;
+        Optional<Person> result = Optional.ofNullable(find(personList, predicateAge));
 
         assertThat(result, instanceOf(Optional.class));
         assertThat(result.isPresent(), is(true));
