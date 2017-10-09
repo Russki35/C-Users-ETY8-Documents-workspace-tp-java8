@@ -43,7 +43,8 @@ public class Stream_04_Test {
         Stream<String> s2 = Stream.of("Johnny", "Marion", "Sophie");
 
         // TODO concatener les deux streams s1 et s2
-        Stream<String> result = null;
+        Stream<String> result = Stream.concat(s1, s2);
+        						
 
         assertThat(result.toArray(), arrayContaining("Alexandra", "Cyril", "Johnny", "Marion", "Sophie"));
     }
