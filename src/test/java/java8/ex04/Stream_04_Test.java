@@ -16,7 +16,7 @@ public class Stream_04_Test {
     @Test
     public void test_of() throws Exception {
         // Construire un stream permettant de rendre le test passant
-        Stream<String> result = null;
+        Stream<String> result = Stream.of("Alexandra", "Cyril", "Johnny", "Marion", "Sophie");
 
         assertThat(result.toArray(), arrayContaining("Alexandra", "Cyril", "Johnny", "Marion", "Sophie"));
     }
@@ -26,7 +26,13 @@ public class Stream_04_Test {
 
         // TODO compléter pour rendre le test passant
         // TODO utiliser la méthode "add"
-        Stream<Object> result = Stream.builder().build();
+        Stream<Object> result = Stream.builder()
+        						.add("Alexandra")
+        						.add("Cyril")
+        						.add("Johnny")
+        						.add("Marion")
+        						.add("Sophie")
+        						.build();
 
         assertThat(result.toArray(), arrayContaining("Alexandra", "Cyril", "Johnny", "Marion", "Sophie"));
     }
