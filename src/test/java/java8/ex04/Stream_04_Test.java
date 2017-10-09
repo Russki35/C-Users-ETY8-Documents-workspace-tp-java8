@@ -52,8 +52,8 @@ public class Stream_04_Test {
     @Test
     public void test_iterate() throws Exception {
         // TODO utiliser la méthode "iterate" de Stream afin de rendre le test passant
-        Stream<Integer> result1 = null;
-        Stream<Integer> result2 = null;
+        Stream<Integer> result1 = Stream.iterate(1, n -> n).limit(5);
+        Stream<Integer> result2 = Stream.iterate(1, n -> n+1).limit(5);
         assertThat(result1.toArray(), arrayContaining(1,1,1,1,1));
         assertThat(result2.toArray(), arrayContaining(1,2,3,4,5));
     }
